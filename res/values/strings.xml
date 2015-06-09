@@ -36,10 +36,12 @@
 	<string name="errcode_unknown">分享返回</string>
 	<string name="errcode_failed">分享失败</string>
 
-	<string name="title_section1">首页</string>
-    <string name="title_section2">充值</string>
-    <string name="title_section3">消费</string>
-    <string name="fragment_navigation_search">搜索</string>
+	<string name="left_drawer_header_backToMain">首页</string>
+    <string name="left_drawer_header_recharge">充值</string>
+    <string name="left_drawer_header_consume">消费</string>
+    <string name="left_drawer_header_message">消息</string>
+    <string name="left_drawer_header_purse">积分赠与</string>
+    <string name="left_drawer_header_account_setting">账号设置</string>
 	
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -16,7 +16,7 @@
     <color name="navigation_bar_item_text">#DEDEDE</color>
     <color name="navigation_bar_item_text_pressed">#F6443D</color>
     <color name="common_divider_gray">#E5E5E5</color>
-    <color name="bg_color">#F8F8F8</color>
+    <color name="bg_color">#FFFFFF</color>
     <color name="title_orange">#FFA10C</color>
     <color name="wx_blue">#2B8BDE</color>
     <color name="white_70">#70000000</color>
