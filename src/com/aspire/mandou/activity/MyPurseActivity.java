@@ -15,6 +15,7 @@ import android.os.Message;
 import android.os.Handler.Callback;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -76,6 +77,15 @@ public class MyPurseActivity extends BaseActivity {
 	public void onBackPressed() {
 //		ExitAppUtil.exit(MyPurseActivity.this);
 	}
+	
+	
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+        		finish();
+             return true;
+         }
+         return super.onKeyDown(keyCode, event);
+     }
 
 	// 添加信息卡按钮事件
 	public void onClickAddCard(View view) {

@@ -55,9 +55,12 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
     private void init(){
     	mTitle = getTitle();
         mPlanetTitles = new String[]{
-                getString(R.string.title_section1),
-                getString(R.string.title_section2),
-                getString(R.string.title_section3),
+                getString(R.string.left_drawer_header_backToMain),
+                getString(R.string.left_drawer_header_recharge),
+                getString(R.string.left_drawer_header_consume),
+                getString(R.string.left_drawer_header_message),
+                getString(R.string.left_drawer_header_purse),
+                getString(R.string.left_drawer_header_account_setting),
         }; 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout); 
@@ -92,8 +95,8 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
                 this,                  /* host Activity */ 
                 mDrawerLayout,         /* DrawerLayout object */ 
                 R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */ 
-                R.string.title_section1,  /* "open drawer" description for accessibility */ 
-                R.string.title_section2  /* "close drawer" description for accessibility */
+                R.string.left_drawer_header_backToMain,  /* "open drawer" description for accessibility */ 
+                R.string.left_drawer_header_recharge  /* "close drawer" description for accessibility */
                 ); 
         mDrawerLayout.setDrawerListener(mDrawerToggle); 
         FragmentManager fragmentManagerOnCreate = getSupportFragmentManager();
@@ -117,7 +120,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
       		}
       		ft.replace(R.id.container, showIntergralFragment);
       		ft.commit();
-      		Log.d("xxx","p:"+arg2);
+      		IntentUtil.redirectToNextActivity(this, MyPurseActivity.class);
       		break;
       	case 2:
       		if(topUpFragment == null){
@@ -134,30 +137,25 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.left_drawer_header_backToMain);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.left_drawer_header_recharge);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.left_drawer_header_consume);
+                break;
+            case 4:
+                mTitle = getString(R.string.left_drawer_header_message);
+                break;
+            case 5:
+                mTitle = getString(R.string.left_drawer_header_purse);
+                break;
+            case 6:
+                mTitle = getString(R.string.left_drawer_header_account_setting);
                 break;
         }
     }
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-//            // Only show items in the action bar relevant to this screen
-//            // if the drawer is not showing. Otherwise, let the drawer
-//            // decide what to show in the action bar.
-//            getMenuInflater().inflate(R.menu.main, menu);
-//            restoreActionBar();
-//            return true;
-//        }
-//        return super.onCreateOptionsMenu(menu);
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
