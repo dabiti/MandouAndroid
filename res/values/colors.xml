@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="red">#f7453b</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#A0A0A0</color>
+    <color name="china_red">#e22825</color>
+    
+    <drawable name="hyperlink_focused_bg">#DFEEFF</drawable>
+    <drawable name="hyperlink_pressed_bg">#92E8FF</drawable>
+    <drawable name="hyperlink_normal_bg">#0FFF</drawable>
+    
+    <color name="navigation_bar_background">#E8E8E8</color>
+    <color name="navigation_bar_item_pressed">#3DA8DD</color>
+    <color name="navigation_bar_item_text">#DEDEDE</color>
+    <color name="navigation_bar_item_text_pressed">#F6443D</color>
+    <color name="common_divider_gray">#E5E5E5</color>
+    <color name="bg_color">#F8F8F8</color>
+    <color name="title_orange">#FFA10C</color>
+    <color name="wx_blue">#2B8BDE</color>
+    <color name="white_70">#70000000</color>
+    <color name="white_80">#80000000</color>
+    
+    <drawable name="actionbar_background">#e22825</drawable>
+    <color name="black_70">#CF000000</color>
+    <color name="black_10">#9D9D9D</color>
+    
+    <color name="info_time_color">#585858</color>
+    <color name="set_content_font">#a1a1a2</color>
+</resources>

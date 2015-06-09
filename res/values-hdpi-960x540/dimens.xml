@@ -1,0 +1,36 @@
+<resources>
+    <dimen name="text_lv">8sp</dimen>
+    <dimen name="text_lv_l">9sp</dimen>
+    <dimen name="text_lv_l1">10sp</dimen>
+    <dimen name="text_lv_2">11sp</dimen>
+    <dimen name="text_lv_22">12sp</dimen>
+    <dimen name="text_lv0">13sp</dimen>
+    <dimen name="text_lv1">14sp</dimen>
+    <dimen name="text_lv2">15sp</dimen>
+    <dimen name="text_lv3">16sp</dimen>
+    <dimen name="text_lv4">17sp</dimen>
+    <dimen name="text_lv5">18sp</dimen>
+    <dimen name="text_lv6">19sp</dimen>
+    <dimen name="text_lv7">22sp</dimen>
+    <dimen name="text_lv8">21sp</dimen>
+    <dimen name="text_lv9">22sp</dimen>
+    <dimen name="text_lv10">23sp</dimen>
+    <dimen name="text_lv11">24sp</dimen>
+    <dimen name="text_lv12">25sp</dimen>
+    <dimen name="text_lv13">26sp</dimen>
+    <dimen name="text_lv14">27sp</dimen>
+    <dimen name="text_lv15">28sp</dimen>
+    <dimen name="text_lv16">30sp</dimen>
+    <dimen name="ad_time_text">92sp</dimen>
+    <!-- 搜索 -->
+    <dimen name="search_bt_mar_right">2dp</dimen>
+    <dimen name="search_bt_mar_left">2dp</dimen>
+    <dimen name="search_history_height">40dp</dimen>
+    <dimen name="search_item_height">71dp</dimen>
+    <dimen name="search_history_mar_top">7dp</dimen>
+    <dimen name="search_item_mar_top">8dp</dimen>
+    <dimen name="search_item_mar_left">20dp</dimen>
+    
+    <dimen name="contact_main_search">50dp</dimen>
+
+</resources>

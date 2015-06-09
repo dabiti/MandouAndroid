@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" >
+         <!-- 上 -->
+     	 <LinearLayout
+     	     android:id="@+id/above_layout"
+	         android:layout_width="match_parent"
+	         android:layout_height="match_parent"
+	         android:layout_above="@+id/zhong_jian_layout">
+	         <!-- 付费二维码 -->
+		     <Button 
+		         android:id="@+id/pay_qrcode"
+		         android:layout_width="wrap_content"
+	         	 android:layout_height="wrap_content"
+	         	 android:background="@drawable/weibo_icon"/>
+		     <!-- 订单记录 -->
+		     <Button 
+		         android:id="@+id/order_record"
+		         android:layout_width="wrap_content"
+	         	 android:layout_height="wrap_content"
+	         	 android:background="@drawable/qq_icon_normal"/>
+     	 </LinearLayout>
+     	 <!-- 中 -->
+     	 <RelativeLayout
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content" 
+	         android:layout_centerHorizontal="true"
+         	 android:layout_centerVertical="true"
+         	 android:id="@+id/zhong_jian_layout">
+         	    <LinearLayout
+         	        android:layout_width="match_parent"
+         	        android:layout_height="100dp"
+         	        android:orientation="horizontal" >
+         	        <!-- 小呀嘛小油桶 -->
+	         		<com.aspire.mandou.view.WaveView
+				        android:id="@+id/waveView1"
+				        android:layout_width="100dp"
+				        android:layout_height="wrap_content"
+				        android:layout_centerInParent="true"
+				        android:background="#ffffff" />
+	         		<LinearLayout
+	         		    android:layout_width="match_parent"
+         	        	android:layout_height="100dp"
+         	        	android:orientation="horizontal">
+         	        	
+         	        </LinearLayout>	
+	         	</LinearLayout>	
+     	 </RelativeLayout>
+     	 <!-- 下 -->
+     	 <RelativeLayout
+     	     android:id="@+id/below_layout"
+	         android:layout_width="match_parent"
+	         android:layout_height="match_parent"
+	         android:layout_below="@id/zhong_jian_layout" >
+         	    <!-- 总金额 -->
+			 <LinearLayout
+			     android:id="@+id/total_amount"
+			     android:layout_width="match_parent"
+	         	 android:layout_height="match_parent"
+	         	 android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/light_gray" />
+                <!-- 积分合计人民币label -->
+			     <TextView
+			         android:id="@+id/total_amount_text"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:text="10000.99"
+			         android:textAppearance="?android:attr/textAppearanceLarge" />
+			     <TextView
+			         android:id="@+id/static_label_ji_fen_quan_e"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:text="积分约合全额（元）" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/light_gray" />
+                <!-- 底部图片组 -->
+                <LinearLayout
+                    android:id="@+id/bottom_image_group"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!-- 当前积分 -->
+                    <LinearLayout
+                        android:id="@+id/current_intergral_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/current_intergral_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/friends_press" />
+                        <LinearLayout
+                            android:id="@+id/current_intergral_text_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:id="@+id/current_intergral_group_des"
+                                android:text="当前积分"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView 
+                                android:id="@+id/current_intergral_group_label"
+                                android:text="1024"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                     <!-- 本月消费 -->
+                    <LinearLayout
+                        android:id="@+id/tomonth_consumption_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/tomonth_consumption_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/friends_press" />
+                        <LinearLayout
+                            android:id="@+id/tomonth_consumption_text_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:id="@+id/tomonth_consumption_group_des"
+                                android:text="本月消费"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView 
+                                android:id="@+id/tomonth_consumption_group_label"
+                                android:text="1024"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                     <!-- 最新消费 -->
+                    <LinearLayout
+                        android:id="@+id/newest_consumption_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/newest_consumption_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/friends_press" />
+                        <LinearLayout
+                            android:id="@+id/newest_consumption_text_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView 
+                                android:id="@+id/newest_consumption_group_des"
+                                android:text="最新消费"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <TextView 
+                                android:id="@+id/newest_consumption_group_label"
+                                android:text="1024"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                        </LinearLayout>
+                    </LinearLayout> 
+                </LinearLayout>
+         	 </LinearLayout>
+     	 </RelativeLayout>
+     </RelativeLayout>
+</LinearLayout>

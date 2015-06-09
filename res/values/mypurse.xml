@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="my_purse_title">银行卡</string>
+    <string name="my_purse_card">我的积分卡</string>
+    <string name="my_purse_order_detail">订单详情</string>
+    <string name="my_purse_point_wei_hao">尾&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号：%1$s</string>
+    <string name="my_purse_point_count">积分余额：%1$s分</string>
+    <string name="my_purse_point_total">合计积分最高价值：%1$s元</string>
+    <string name="my_purse_tips_card_list_empty">您的信用卡列表为空。</string>
+    <string name="my_purse_tips_order_list_empty">您的电子券列表为空。</string>
+    <string name="my_purse_op_unbind">解除</string>
+    <string name="my_purse_op_bind">添加积分卡</string>
+    <string name="my_purse_coupon_op_bind">我要办卡</string>
+    <string name="my_purse_op_view">查看</string>
+    <string name="my_purse_op_pay">支付</string>
+    <string name="my_purse_op_pay_continue">继续支付</string>
+    <string name="my_purse_op_get_validate">发送验证码</string>
+    <string name="my_purse_op_add">添加</string>
+    <string name="my_purse_sale_total">积分折合金额（元）：</string>
+    
+    
+
+    <color name="color_my_purse_total_yellow">#FFA10C</color>
+    <color name="color_my_purse_add_card_grey">#F8F8F8</color>
+
+    <!-- 订单详情 -->
+    <string name="my_order_num">订单号：%1$s</string>
+    <string name="my_order_item">商&#160;&#160;&#160;&#160;品：%1$s</string>
+    <string name="my_order_amount">面&#160;&#160;&#160;&#160;额：%1$s元</string>
+    <string name="my_order_detail">订单详情</string>
+    <string name="my_order_code">二维码</string>
+    <string name="my_order_status">支付状态：%1$s</string>
+    <string name="my_order_bank_name">银行名称：%1$s</string>
+    <string name="my_order_bank_num">尾&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;号：%1$s</string>
+    <string name="my_order_cash_pay">现金支付：%1$s元</string>
+    <string name="my_order_point_pay">积分支付：%1$s分</string>
+    <string name="my_order_amount_info">总金额：%1$s元, 剩余：%2$s元</string>
+    <string name="my_order_qr_tips">订单未完成支付,请先进行支付。</string>
+
+    <color name="color_my_purse_order_line_grey">#BBBBBB</color>
+    <color name="color_card_text">#585858</color>
+    <color name="color_card_add">#333333</color>
+    <color name="color_order_detail_qr_amount">#666666</color>
+    <color name="color_card_add_btn_bg">#C8C8C8</color>
+    <color name="color_card_add_btn_text">#FEFEFE</color>
+
+    <!-- 添加信用卡 -->
+    <string name="card_add_num_tips">请输入卡号</string>
+    <string name="card_add_idcard_tips">请输入身份证号码</string>
+    <string name="card_add_idcard_error">请输入有效的身份证号码</string>
+    <string name="card_add_name_tips">请输入持卡人姓名</string>
+    <string name="card_add_phone_tips">请输入持卡人预留手机号码</string>
+    <string name="card_add_phone_error">请输入有效的持卡人预留手机号码</string>
+    <string name="card_add_vc_tips">请输入验证码</string>
+
+</resources>

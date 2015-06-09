@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="my_home">我的满兜</string>
+    <string name="my_account">帐户与安全</string>
+    <string name="my_transaction">积分交易记录</string>
+    <string name="my_partner">合作伙伴</string>
+    <string name="my_about">关于我们</string>
+    
+    
+    <string name="my_op_logout">退出登录</string>
+    <string name="my_op_submit">提交</string>
+    <string name="my_op_edit_confirm">确认修改</string>
+    
+    <string name="my_op_confirm">确认</string>
+    <string name="my_op_save">保存</string>
+    
+    <!-- 积分交易记录 -->
+    <string name="my_trans_list_empty">您的积分交易记录列表为空。</string>
+    <string name="my_trans_bank">积分银行：%1$s</string>
+    <string name="my_trans_point_use">积分消费：%1$s分</string>
+    <string name="my_trans_card">信用卡：尾号%1$s</string>
+    <string name="my_trans_order_num">订单号：%1$s</string>
+    <string name="my_trans_status">状态：%1$s</string>
+    <string name="my_trans_date">下单时间：%1$s</string>
+    
+    <!-- 帐户与安全 -->
+    <string name="my_acc_image_mgmt">头像管理</string>
+   <string name="my_acc_nick_name">昵称</string>
+   <string name="my_acc_phone">手机验证</string>
+   <string name="my_acc_email">邮箱验证</string>
+   <string name="my_acc_pwd_trade">交易密码管理</string>
+   <string name="my_acc_pwd_account">修改登录密码</string>
+   <string name="my_acc_pwd_trade_set">设置交易密码</string>
+   <string name="my_acc_pwd_trade_modify">修改交易密码</string>
+    
+   <!--修改登录密码  -->
+   <string name="my_pwd_orgin">原密码</string>
+   <string name="my_pwd_new">新密码</string>
+   <string name="my_pwd_confirm">确认密码</string>
+   <string name="my_pwd_orgin_tips">请输入原密码</string>
+   <string name="my_pwd_new_tips">请输入新密码</string>
+   <string name="my_pwd_confirm_tips">请再次输入新密码</string>
+   <string name="my_pwd_error_tips">确认密码与新密码不一致，请重新输入</string>
+   
+   <!-- 关于我们 -->
+   <string name="my_weixin_id">mndou618</string>
+    <string name="my_about_version">版本号</string>
+    <string name="my_about_wexin">微信公众号</string>
+    <string name="my_about_msg_board">满兜留言板</string>
+    <string name="my_about_msg_board_tips">感谢您宝贵的建议。</string>
+    <string name="my_about_msg_empty_tips">请输入留言内容。</string>
+    
+    <color name="my_color_label">#333333</color>
+    <color name="my_color_hint">#cccccc</color>
+    <color name="my_color_yellow">#FFA10C</color>
+    
+    <!-- 手机，邮箱验证 -->
+    <string name="my_verify_phone">请输入手机号</string>
+    <string name="my_verify_email">请输入邮箱</string>
+    <string name="my_verify_phone_error">手机号输入错误</string>
+    <string name="my_verify_email_error">邮箱输入错误</string>
+    <string name="my_verify_phone_code">请输入验证码</string>
+    <string name="my_verify_send_email">发送验证邮件</string>
+    
+    <!-- 修改昵称 -->
+    <string name="my_nickname_tips">请输入昵称</string>
+    
+    <!-- 找回密碼 -->
+    <string name="my_forgot_trade_password_title">找回交易密码</string>
+    <string name="my_forgot_trade_password_phone_error">只有通过已验证的手机找回交易密码,请先进行手机验证。</string>
+    <string name="my_forgot_trade_password_email_error">只有通过已验证的邮箱找回交易密码，请先进行邮箱验证。</string>
+    
+     <!-- 合作商户 -->
+    <string name="my_partner_already">已合作伙伴</string>
+    <string name="my_partner_comming">即将合作伙伴</string>
+    
+    <!-- 验证码提示 -->
+    <string name="my_phone_code_send">序列号为%1$s的验证码短信已发送到您的手机，请注意查收。</string>
+    <string name="my_email_code_send">序列号为%1$s的验证码邮件已发送到您的邮箱，请注意查收。</string>
+    
+    <string name="my_about_content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;满兜系北京易积分科技有限公司出品的一款专业提供积分兑付综合服务的应用APP。公司通过与各大特约商户的合作，为用户提供便利快捷、价值认可度高的积分兑换商品，并为满兜会员提供大量会员特惠商品信息推荐。同时，为了方便用户使用，满兜在指定特约商户中石化易捷便利店内设有——满兜积分多功能POS机，用户可直接刷卡积分消费，满足用户不同的使用操作习惯，不断优化用户体验，旨在为用户提供安全、快捷、便利的积分兑付服务。</string>
+</resources>

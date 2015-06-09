@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_title">满兜帮</string>
+    <string name="help_list_empty">暂无内容。</string>
+    
+    <color name="color_yellow_line">#FFAA24</color>
+    <color name="color_black_alpha">#7f000000</color>
+</resources>

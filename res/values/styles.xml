@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 应用程序级别或第三方组件的属性 -->
+
+
+    <!-- Custom Activity Title Style -->
+
+    <style name="Custom_Title_Icon_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="Custom_Title_Text_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="Custom_Title_ActionContainer_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="Custom_Title_Style">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:background">@color/title_orange</item>
+    </style>
+
+    <style name="Custom_AutoCompleteTextViewLight" parent="@android:style/Widget.AutoCompleteTextView">
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="Widget.DropDownItemLight" parent="@android:style/Widget.DropDownItem">
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="Activity_Title" parent="android:style/Theme.Light">
+        <item name="android:windowTitleBackgroundStyle">@style/Custom_Title_Style</item>
+        <item name="android:autoCompleteTextViewStyle">@style/Custom_AutoCompleteTextViewLight</item>
+        <item name="android:dropDownItemStyle">@style/Widget.DropDownItemLight</item>
+        <item name="android:windowTitleSize">45dp</item>
+        <item name="android:textColorPrimaryInverse">@android:color/primary_text_light</item>
+        <item name="android:textColorSecondaryInverse">#323232</item>
+    </style>
+    
+    <style name="Activity_Title_noAnimation" parent="@style/Activity_Title">
+       <item name="android:windowAnimationStyle">@style/noAnimation</item>  
+    </style>
+    
+    <!-- Page Content Style -->
+    <style name="page_content_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">#EEEEEE</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Bottom Navigation Bar Style -->
+    <style name="NavigationBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="NavigationBarItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="NavigationBarItemValue">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:drawablePadding">1dp</item>
+        <item name="android:textColor">@color/menu_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="NavigationBarItemLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">3dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_gravity">top</item>
+    </style>
+
+    <style name="NavigationBarItemSeparateLine">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@drawable/vertical_separate_line</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="Hyperlink">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/hyperlink_bg</item>
+    </style>
+
+    <style name="custom_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="custom_page_loading" parent="android:style/Widget.ProgressBar.Large">
+        <item name="android:indeterminateDrawable">@drawable/page_loading_anim</item>
+    </style>
+
+    <style name="custom_small_loading" parent="android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/small_loading_anim</item>
+    </style>
+
+    <style name="star_rating_bar_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_rating_bar</item>
+    </style>
+	
+    <style name="AlertDialogCustom" parent="@android:style/Animation.Dialog">
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="noAnimation">  
+        <item name="android:activityOpenEnterAnimation">@null</item>  
+        <item name="android:activityOpenExitAnimation">@null</item>  
+        <item name="android:activityCloseEnterAnimation">@null</item>  
+        <item name="android:activityCloseExitAnimation">@null</item>  
+        <item name="android:taskOpenEnterAnimation">@null</item>  
+        <item name="android:taskOpenExitAnimation">@null</item>  
+        <item name="android:taskCloseEnterAnimation">@null</item>  
+        <item name="android:taskCloseExitAnimation">@null</item> 
+        <item name="android:taskToFrontEnterAnimation">@null</item>  
+        <item name="android:taskToFrontExitAnimation">@null</item> 
+        <item name="android:taskToBackEnterAnimation">@null</item>  
+        <item name="android:taskToBackExitAnimation">@null</item>  
+    </style> 
+    
+     <style name="style_product_photo_spec_no_trans" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/white_80</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/no_animation</item>
+    </style>
+    
+    <style name="no_animation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+    </style>
+    
+     
+      <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+           parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/actionbar_background</item>
+        <item name="android:titleTextStyle">@style/MyTitleStyle</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@drawable/actionbar_background</item>
+        <item name="titleTextStyle">@style/MyTitleStyle</item>
+    </style>
+    <style name="MyTitleStyle"
+           parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">20dp</item>
+        
+    </style>
+</resources>
