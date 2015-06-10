@@ -36,7 +36,6 @@ import android.support.v4.widget.DrawerLayout;
 
 public class MainActivity extends ActionBarActivity implements OnItemClickListener {
 
-    private NavigationDrawerFragment mNavigationDrawerFragment;
     private TopUpFragment topUpFragment;// 充值积分页面
     private ShowIntegralFragment showIntergralFragment;// 积分展示界面（小油桶）
     private CharSequence mTitle;
@@ -89,8 +88,6 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
                 mDrawerToggle.switchDrawer(); 
             } 
         }); 
-        // MabDrawerToggle ties together the the proper interactions 
-        // between the sliding drawer and the action bar app icon 
         mDrawerToggle = new MabDrawerToggle( 
                 this,                  /* host Activity */ 
                 mDrawerLayout,         /* DrawerLayout object */ 
@@ -136,22 +133,22 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 
     public void onSectionAttached(int number) {
         switch (number) {
-            case 1:
+            case 0:
                 mTitle = getString(R.string.left_drawer_header_backToMain);
                 break;
-            case 2:
+            case 1:
                 mTitle = getString(R.string.left_drawer_header_recharge);
                 break;
-            case 3:
+            case 2:
                 mTitle = getString(R.string.left_drawer_header_consume);
                 break;
-            case 4:
+            case 3:
                 mTitle = getString(R.string.left_drawer_header_message);
                 break;
-            case 5:
+            case 4:
                 mTitle = getString(R.string.left_drawer_header_purse);
                 break;
-            case 6:
+            case 5:
                 mTitle = getString(R.string.left_drawer_header_account_setting);
                 break;
         }
