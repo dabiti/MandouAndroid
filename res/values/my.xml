@@ -53,6 +53,7 @@
     <color name="my_color_label">#333333</color>
     <color name="my_color_hint">#cccccc</color>
     <color name="my_color_yellow">#FFA10C</color>
+    <color name="my_color_blue">#45c0ff</color>
     
     <!-- 手机，邮箱验证 -->
     <string name="my_verify_phone">请输入手机号</string>
