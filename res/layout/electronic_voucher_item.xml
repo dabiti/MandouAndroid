@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+  
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+  		<ImageView
+  		    android:layout_width="wrap_content"
+  		    android:layout_height="wrap_content"
+  		    android:src="@drawable/bank_icon"
+  		    android:id="@+id/shang_pin_icon"/>
+  		<LinearLayout
+  		    android:layout_width="wrap_content"
+  		    android:layout_height="wrap_content"
+  		    android:orientation="vertical">
+  		    <LinearLayout
+  		        android:layout_width="match_parent"
+  		        android:layout_height="wrap_content"
+  		        android:orientation="horizontal">
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="订单号"/>
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="YH109808145"
+  		            android:id="@+id/ding_dan_hao"/>
+  		    </LinearLayout>  
+  		    <LinearLayout
+  		        android:layout_width="match_parent"
+  		        android:layout_height="wrap_content"
+  		        android:orientation="horizontal">
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="商品"/>
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="华为/小米I4550PS"
+  		            android:id="@+id/shang_pin_ming_cheng"/>
+  		    </LinearLayout>
+  		    <LinearLayout
+  		        android:layout_width="match_parent"
+  		        android:layout_height="wrap_content"
+  		        android:orientation="horizontal">
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="面额"/>
+  		        <TextView
+  		            android:layout_width="wrap_content"
+  		            android:layout_height="wrap_content"
+  		            android:text="999"
+  		            android:id="@+id/mian_e_shu"/>
+  		    </LinearLayout>  
+  		</LinearLayout>          
+	</LinearLayout>
+
+	<ImageView
+	    android:id="@+id/zhi_fu_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="right"
+	    android:src="@drawable/btn_add_card_selector" />
+
+</LinearLayout>

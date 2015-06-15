@@ -1,6 +1,7 @@
 package com.aspire.mandou.activity;
 
 
+import com.aspire.mandou.fragment.RecordsConsumptionFragmentManager;
 import com.aspire.mandou.fragment.ShowIntegralFragment;
 import com.aspire.mandou.fragment.TopUpFragment;
 import com.aspire.mandou.framework.widget.MyToast;
@@ -38,6 +39,8 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 
     private TopUpFragment topUpFragment;// 充值积分页面
     private ShowIntegralFragment showIntergralFragment;// 积分展示界面（小油桶）
+    /**消费记录&电子券tab的管理页面*/
+    private RecordsConsumptionFragmentManager recordsConsumptionManager;// 
     private CharSequence mTitle;
     private ListView mDrawerList;// 左侧抽屉listview
     private String[] mPlanetTitles;
@@ -103,21 +106,18 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
         ftOnCreate.commit();
     }
 
+    
     @Override
   	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
           FragmentManager fragmentManager = getSupportFragmentManager();
           FragmentTransaction ft = fragmentManager.beginTransaction();
   		switch(arg2){
-      	case 0:
-      		Log.d("xxx","p:"+arg2);
-      		break;
       	case 1:
       		if(showIntergralFragment == null){
       			showIntergralFragment = new ShowIntegralFragment();
       		}
       		ft.replace(R.id.container, showIntergralFragment);
       		ft.commit();
-      		IntentUtil.redirectToNextActivity(this, MyPurseActivity.class);
       		break;
       	case 2:
       		if(topUpFragment == null){
@@ -125,7 +125,16 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
       		}
       		ft.replace(R.id.container, topUpFragment);
       		ft.commit();	
-      		Log.d("xxx","p:"+arg2);
+      		break;
+      	case 3:
+      		if(recordsConsumptionManager == null){
+      			recordsConsumptionManager = new RecordsConsumptionFragmentManager();
+      		}
+      		ft.replace(R.id.container,recordsConsumptionManager);
+      		ft.commit();
+      		break;
+      	case 4:
+      		IntentUtil.redirectToNextActivity(this, MyPurseActivity.class);
       		break;
       	}
   		mDrawerLayout.closeDrawer(mDrawerList);
