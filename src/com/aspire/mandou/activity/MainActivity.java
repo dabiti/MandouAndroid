@@ -55,8 +55,8 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
     	mTitle = getTitle();
         mPlanetTitles = new String[]{
                 getString(R.string.left_drawer_header_backToMain),
-                getString(R.string.left_drawer_header_recharge),
-                getString(R.string.left_drawer_header_consume),
+                getString(R.string.left_drawer_header_card),
+                getString(R.string.left_drawer_header_user),
                 getString(R.string.left_drawer_header_message),
                 getString(R.string.left_drawer_header_purse),
                 getString(R.string.left_drawer_header_account_setting),
@@ -109,7 +109,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
           FragmentTransaction ft = fragmentManager.beginTransaction();
   		switch(arg2){
       	case 0:
-      		Log.d("xxx","p:"+arg2);
+      		Log.i("MainActivity:","onItemClick:"+arg2);
       		break;
       	case 1:
       		if(showIntergralFragment == null){
@@ -117,7 +117,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
       		}
       		ft.replace(R.id.container, showIntergralFragment);
       		ft.commit();
-      		IntentUtil.redirectToNextActivity(this, MyPurseActivity.class);
+      		Log.i("MainActivity:","onItemClick:"+arg2);
       		break;
       	case 2:
       		if(topUpFragment == null){
@@ -125,7 +125,8 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
       		}
       		ft.replace(R.id.container, topUpFragment);
       		ft.commit();	
-      		Log.d("xxx","p:"+arg2);
+      		Log.i("MainActivity:","onItemClick:"+arg2);
+      		IntentUtil.redirectToNextActivity(this, MyPurseActivity.class);
       		break;
       	}
   		mDrawerLayout.closeDrawer(mDrawerList);
@@ -137,10 +138,10 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
                 mTitle = getString(R.string.left_drawer_header_backToMain);
                 break;
             case 1:
-                mTitle = getString(R.string.left_drawer_header_recharge);
+                mTitle = getString(R.string.left_drawer_header_card);
                 break;
             case 2:
-                mTitle = getString(R.string.left_drawer_header_consume);
+                mTitle = getString(R.string.left_drawer_header_user);
                 break;
             case 3:
                 mTitle = getString(R.string.left_drawer_header_message);
@@ -166,14 +167,6 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
         return super.onOptionsItemSelected(item);
     }
     
-    /**
-     * 输入搜索条件
-     * @author yanbin_a
-     */
-    @SuppressWarnings("unused")
-	private void onClickAvatar() {
-    	
-	}
     /**
      * A placeholder fragment containing a simple view.
      */
