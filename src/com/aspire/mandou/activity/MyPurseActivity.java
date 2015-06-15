@@ -29,9 +29,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.aspire.mandou.activity.base.BaseActivity;
-import com.aspire.mandou.framework.widget.NavigationHelper;
+import com.aspire.mandou.entity.BizException;
+import com.aspire.mandou.entity.ResultData;
+import com.aspire.mandou.entity.customer.CreditCardInfo;
+import com.aspire.mandou.framework.widget.MyToast;
+import com.aspire.mandou.request.CardUnbindRequest;
 import com.aspire.mandou.util.CustomerUtil;
 import com.aspire.mandou.util.IntentUtil;
+import com.aspire.mandou.util.MyAsyncTask;
+import com.aspire.mandou.webservice.ServiceException;
+import com.aspire.mandou.webservice.WalletService;
 import com.example.mandou.R;
 import com.neweggcn.lib.json.JsonParseException;
 
@@ -40,10 +47,7 @@ public class MyPurseActivity extends BaseActivity {
 	private static final int MSG_NEWSLIST_GET = 1;
 	private static final int PAGE_SIZE = 10;
 	private int mCurrentPageNumber = 0;
-//	private OrderFilter orderFilter;
-//	private NLPullRefreshView mMyOrderListPullRefreshView;
 	private ListView mMyOrderListView;
-//	OrderListViewAdapter mAdapter;
 	private View mMyOrderListEmptyView;
 
 	private View tabCardContainerView;
@@ -57,10 +61,8 @@ public class MyPurseActivity extends BaseActivity {
 	private TextView tabOrderTextView;
 	private View tabOrderLineView;
 	private View tabOrderLayout;
-
 	private List<TextView> pointTextViewList;
 
-//	private NLPullRefreshView cardListPullRefreshView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,7 @@ public class MyPurseActivity extends BaseActivity {
 		putContentView(R.layout.my_purse_layout, R.string.my_purse_title);
 		CustomerUtil.addVisitorView(this);
 		layoutInflater = (LayoutInflater) getSystemService(Service.LAYOUT_INFLATER_SERVICE);
-//		initViews();
+		initViews();
 //		getBannerList();
 //		getMyCardList();
 	}
@@ -93,25 +95,25 @@ public class MyPurseActivity extends BaseActivity {
 	}
 
 	private void initViews() {
-//		// 我的银行卡
-//		tabCardContainerView = findViewById(R.id.my_card_framelayout);
+		// 我的银行卡
+		tabCardContainerView = findViewById(R.id.my_card_framelayout);
 //		tabCardImageView = (ImageView) findViewById(R.id.my_card_image);
-//		tabCardTextView = (TextView) findViewById(R.id.my_card_textview);
+		tabCardTextView = (TextView) findViewById(R.id.my_card_textview);
 //		tabCardLineView = findViewById(R.id.my_card_line_selected_view);
-//		tabCardLayout = findViewById(R.id.my_card_layout);
-//
-//		// 我的电子券
-//		tabOrderContainerView = findViewById(R.id.my_order_framelayout);
+		tabCardLayout = findViewById(R.id.my_card_layout);
+
+		// 我的电子券
+		tabOrderContainerView = findViewById(R.id.my_order_framelayout);
 //		tabOrderImageView = (ImageView) findViewById(R.id.my_order_image);
-//		tabOrderTextView = (TextView) findViewById(R.id.my_order_textview);
+		tabOrderTextView = (TextView) findViewById(R.id.my_order_textview);
 //		tabOrderLineView = findViewById(R.id.my_order_line_selected_view);
-//		tabOrderLayout = findViewById(R.id.my_order_layout);
+		tabOrderLayout = findViewById(R.id.my_order_layout);
 
 		tabCardContainerView.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				selectTabCard();
+//				selectTabCard();
 				if (tabCardLayout.getTag() == null) {
 //					getMyCardList();
 				}
@@ -155,8 +157,7 @@ public class MyPurseActivity extends BaseActivity {
 	private void selectTabCard() {
 		// 我的银行卡
 		tabCardImageView.setImageResource(R.drawable.card_hl);
-		tabCardTextView
-				.setTextColor(getResources().getColor(R.color.menu_gray));
+		tabCardTextView.setTextColor(getResources().getColor(R.color.menu_gray));
 		tabCardLineView.setVisibility(View.VISIBLE);
 		tabCardLayout.setVisibility(View.VISIBLE);
 
@@ -184,46 +185,46 @@ public class MyPurseActivity extends BaseActivity {
 		tabOrderLayout.setVisibility(View.VISIBLE);
 	}
 
-//	private View generateCardView(final CreditCardInfo cardInfo) {
-//		View rootView = layoutInflater.inflate(R.layout.my_purse_card_cell,
-//				null);
-//		TextView bankName = (TextView) rootView.findViewById(R.id.bank_name);
-//		TextView bankNumber = (TextView) rootView
-//				.findViewById(R.id.bank_number);
-//		TextView bankPoint = (TextView) rootView.findViewById(R.id.bank_point);
-//
-//		// 银行名称
-//		bankName.setText(cardInfo.getBankName());
-//		// 尾号
-//		String cardNumberString = cardInfo.getCardNumber();
-//		if (cardNumberString == null) {
-//			cardNumberString = "";
-//		}
-//		if (cardNumberString.length() > 4) {
-//			cardNumberString = cardNumberString.substring(cardNumberString
-//					.length() - 4);
-//		}
-//		String numberString = getString(R.string.my_purse_point_wei_hao,
-//				cardNumberString);
-//		bankNumber.setText(numberString);
-//		// 积分数量
-//		setPointTextView(bankPoint, "加载中...");
-//		bankPoint.setTag(cardInfo.getSysNo());
-//		pointTextViewList.add(bankPoint);
-//
-//		Button opUnbind = (Button) rootView.findViewById(R.id.op_unbind);
-//		opUnbind.setOnClickListener(new View.OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Dialog dialog = buildUnbindConfirmDialog(cardInfo);
-//				dialog.show();
-//			}
-//		});
-//
-//		return rootView;
-//	}
+	/*private View generateCardView(final CreditCardInfo cardInfo) {
+		View rootView = layoutInflater.inflate(R.layout.my_purse_card_cell,
+				null);
+		TextView bankName = (TextView) rootView.findViewById(R.id.bank_name);
+		TextView bankNumber = (TextView) rootView
+				.findViewById(R.id.bank_number);
+		TextView bankPoint = (TextView) rootView.findViewById(R.id.bank_point);
 
+		// 银行名称
+		bankName.setText(cardInfo.getBankName());
+		// 尾号
+		String cardNumberString = cardInfo.getCardNumber();
+		if (cardNumberString == null) {
+			cardNumberString = "";
+		}
+		if (cardNumberString.length() > 4) {
+			cardNumberString = cardNumberString.substring(cardNumberString
+					.length() - 4);
+		}
+		String numberString = getString(R.string.my_purse_point_wei_hao,
+				cardNumberString);
+		bankNumber.setText(numberString);
+		// 积分数量
+		setPointTextView(bankPoint, "加载中...");
+		bankPoint.setTag(cardInfo.getSysNo());
+		pointTextViewList.add(bankPoint);
+
+		Button opUnbind = (Button) rootView.findViewById(R.id.op_unbind);
+		opUnbind.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Dialog dialog = buildUnbindConfirmDialog(cardInfo);
+				dialog.show();
+			}
+		});
+
+		return rootView;
+	}
+*/
 //	private Dialog buildUnbindConfirmDialog(final CreditCardInfo cardInfo) {
 //		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 //		builder.setTitle("温馨提示");
@@ -245,62 +246,62 @@ public class MyPurseActivity extends BaseActivity {
 		textView.setText(pointString);
 	}
 
-//	private void unbindCard(CreditCardInfo cardInfo) {
-//		final CardUnbindRequest request = new CardUnbindRequest();
-//		request.setCardSysNo(cardInfo.getSysNo());
-//		request.setCardNo(cardInfo.getCardNumber());
-//		new MyAsyncTask<ResultData<CardUnbindRequest>>(this) {
-//
-//			@Override
-//			public ResultData<CardUnbindRequest> callService()
-//					throws IOException, JsonParseException, BizException,
-//					ServiceException {
-//				return new WalletService().unbindCard(request);
-//			}
-//
-//			@Override
-//			public void onLoaded(ResultData<CardUnbindRequest> result)
-//					throws Exception {
-//				MyToast.show(MyPurseActivity.this, result.getMessage());
-//				if (result.isSuccess()) {
-//					// 刷新我的信用卡列表
-//					getMyCardList();
-//				} else {
-//					showError(result);
-//				}
-//			}
-//
-//		}.execute();
-//	}
+	private void unbindCard(CreditCardInfo cardInfo) {
+		final CardUnbindRequest request = new CardUnbindRequest();
+		request.setCardSysNo(cardInfo.getSysNo());
+		request.setCardNo(cardInfo.getCardNumber());
+		new MyAsyncTask<ResultData<CardUnbindRequest>>(this) {
 
-//	private void getMyCardList() {
-//		showLoading("正在加载信用卡信息...");
-//		new MyAsyncTask<ResultData<List<CreditCardInfo>>>(this) {
-//
-//			@Override
-//			public ResultData<List<CreditCardInfo>> callService()
-//					throws IOException, JsonParseException, BizException,
-//					ServiceException {
-//				return new WalletService().getMyCardList();
-//			}
-//
-//			@Override
-//			public void onLoaded(ResultData<List<CreditCardInfo>> result)
-//					throws Exception {
+			@Override
+			public ResultData<CardUnbindRequest> callService()
+					throws IOException, JsonParseException, BizException,
+					ServiceException {
+				return new WalletService().unbindCard(request);
+			}
+
+			@Override
+			public void onLoaded(ResultData<CardUnbindRequest> result)
+					throws Exception {
+				MyToast.show(MyPurseActivity.this, result.getMessage());
+				if (result.isSuccess()) {
+					// 刷新我的信用卡列表
+					getMyCardList();
+				} else {
+					showError(result);
+				}
+			}
+
+		}.execute();
+	}
+
+	private void getMyCardList() {
+		showLoading("正在加载信用卡信息...");
+		new MyAsyncTask<ResultData<List<CreditCardInfo>>>(this) {
+
+			@Override
+			public ResultData<List<CreditCardInfo>> callService()
+					throws IOException, JsonParseException, BizException,
+					ServiceException {
+				return new WalletService().getMyCardList();
+			}
+
+			@Override
+			public void onLoaded(ResultData<List<CreditCardInfo>> result)
+					throws Exception {
 //				cardListPullRefreshView.finishRefresh();
-//				closeLoading();
-//				if (result.isSuccess()) {
+				closeLoading();
+				if (result.isSuccess()) {
 //					showCardList(result.getData());
 //					getMyCardPointList(result.getData());
-//					tabCardLayout.setTag("loaded");
-//				} else {
-//					showError(result);
-//				}
-//			}
-//
-//		}.execute();
-//	}
-//
+					tabCardLayout.setTag("loaded");
+				} else {
+					showError(result);
+				}
+			}
+
+		}.execute();
+	}
+
 //	private void getMyCardPointList(List<CreditCardInfo> cardList) {
 //		if (cardList == null || cardList.size() == 0) {
 //			return;

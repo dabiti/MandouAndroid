@@ -10,10 +10,12 @@ import com.aspire.mandou.activity.base.BaseActivity;
 import com.aspire.mandou.entity.BizException;
 import com.aspire.mandou.entity.ResultData;
 import com.aspire.mandou.framework.widget.MyToast;
+import com.aspire.mandou.request.CardBindRequest;
 import com.aspire.mandou.util.IntentUtil;
 import com.aspire.mandou.util.MyAsyncTask;
 import com.aspire.mandou.util.StringUtil;
 import com.aspire.mandou.util.UIUtil;
+import com.aspire.mandou.webservice.MyAccountService_Part2;
 import com.aspire.mandou.webservice.ServiceException;
 import com.example.mandou.R;
 import com.neweggcn.lib.json.JsonParseException;
@@ -28,7 +30,16 @@ public class AddCardActivity extends BaseActivity {
 		
 	}
 	
+	/**
+	 * yanbin_a for test
+	 * @param view
+	 */
 	public void onClickSave(View view){
+		IntentUtil.redirectToNextNewActivity(this, MyPhoneVerifyActivity.class);
+	}
+	
+	public void onClickSaveTest(View view){
+		
 		EditText cardNumEditText = (EditText)findViewById(R.id.card_add_num);
 		EditText idCardEditText = (EditText)findViewById(R.id.card_add_idcard);
 		EditText nameEditText = (EditText)findViewById(R.id.card_add_name);
@@ -67,35 +78,39 @@ public class AddCardActivity extends BaseActivity {
 
 		UIUtil.hideSoftInput(phoneEditText);
 		showLoading(R.string.loading_message_tip);
-//		new MyAsyncTask<ResultData<CardBindRequest>>(this) {
-//
-//			@Override
-//			public ResultData<CardBindRequest> callService()
-//					throws IOException, JsonParseException, BizException,
-//					ServiceException {
-//				CardBindRequest request = new CardBindRequest();
-//				request.setCardNo(cardNumString);
-//				request.setCardOwnerCellPhone(phoneString);
-//				request.setCardOwnerName(nameString);
-//				request.setIDNumber(idCardString);
-//				request.setBankSysNo(10);
-//				return new MyAccountService_Part2().bindCreditCard(request);
-//			}
-//
-//			@Override
-//			public void onLoaded(ResultData<CardBindRequest> result)
-//					throws Exception {
-//				closeLoading();
-//				
-//				if (result.isSuccess()) {
-//					MyToast.show(getApplicationContext(), result.getMessage());
-//					IntentUtil.redirectToNextActivity(AddCardActivity.this, MyPurseActivity.class);
-//					AddCardActivity.this.finish();
-//				}else{
-//					showError(result);
-//				}
-//			}
-//
-//		}.execute();
+		new MyAsyncTask<ResultData<CardBindRequest>>(this) {
+
+			@Override
+			public ResultData<CardBindRequest> callService()
+					throws IOException, JsonParseException, BizException,
+					ServiceException {
+				CardBindRequest request = new CardBindRequest();
+				request.setCardNo(cardNumString);
+				request.setCardOwnerCellPhone(phoneString);
+				request.setCardOwnerName(nameString);
+				request.setIDNumber(idCardString);
+				request.setBankSysNo(10);
+				/**
+				 * yanbin_a for test
+				 */
+				IntentUtil.redirectToNextActivity(AddCardActivity.this, MyPurseActivity.class);
+				AddCardActivity.this.finish();
+				
+				return new MyAccountService_Part2().bindCreditCard(request);
+			}
+
+			@Override
+			public void onLoaded(ResultData<CardBindRequest> result)
+					throws Exception {
+				closeLoading();
+				if (result.isSuccess()) {
+					MyToast.show(getApplicationContext(), result.getMessage());
+					IntentUtil.redirectToNextActivity(AddCardActivity.this, MyPurseActivity.class);
+					AddCardActivity.this.finish();
+				}else{
+					showError(result);
+				}
+			}
+		}.execute();
 	}
 }

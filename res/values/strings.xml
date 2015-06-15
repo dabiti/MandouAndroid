@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">满兜1.0</string>
+    <string name="app_name">满箱油</string>
     <string name="user_agent">Mandou Android Phone/1.0</string>
     <string name="retry">重试</string>
     
@@ -36,7 +36,9 @@
 	<string name="errcode_unknown">分享返回</string>
 	<string name="errcode_failed">分享失败</string>
 
-	<string name="left_drawer_header_backToMain">首页</string>
+	<string name="left_drawer_header_backToMain">主页</string>
+	<string name="left_drawer_header_card">银行卡</string>
+	<string name="left_drawer_header_user">用户</string>
     <string name="left_drawer_header_recharge">充值</string>
     <string name="left_drawer_header_consume">消费</string>
     <string name="left_drawer_header_message">消息</string>
